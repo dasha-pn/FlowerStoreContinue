@@ -1,20 +1,14 @@
 package lab7.lab7.repository.flower;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 @Getter
+@AllArgsConstructor
 public class FlowerSpec {
     private final FlowerType type;
     private final FlowerColor color;
     private final double sepalLength;
-
-    public FlowerSpec(FlowerType type, 
-                    FlowerColor color, 
-                    double sepalLength) {
-        this.type = type;
-        this.color = color;
-        this.sepalLength = sepalLength;
-    }
 
     public boolean matches(FlowerSpec other) {
         if (other == null) {

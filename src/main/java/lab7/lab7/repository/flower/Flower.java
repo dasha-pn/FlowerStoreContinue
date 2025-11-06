@@ -1,29 +1,21 @@
 package lab7.lab7.repository.flower;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Setter
+@Getter
+@AllArgsConstructor
+@NoArgsConstructor
 public class Flower {
-    @Getter
     private double sepalLength;
     private FlowerColor color;
-    @Getter
     private double price;
-    @Getter
     private FlowerType flowerType;
 
-    public Flower(double sepalLength, FlowerColor color, double price, FlowerType flowerType) {
-        this.sepalLength = sepalLength;
-        this.color = color;
-        this.price = price;
-        this.flowerType = flowerType;
-    }
-
     public Flower(Flower other) {
-        if (other == null) {
-            throw new IllegalArgumentException("other flower is null");
-        }
         this.sepalLength = other.sepalLength;
         this.color = other.color;
         this.price = other.price;
@@ -31,9 +23,6 @@ public class Flower {
     }
 
     public String getColor() {
-        if (color == null) {
-            return null;
-        }
         return color.toString();
     }
 

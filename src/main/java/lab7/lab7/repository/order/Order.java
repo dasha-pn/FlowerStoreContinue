@@ -23,8 +23,6 @@ public class Order {
     }
 
     public boolean processOrder() {
-        if (payment == null || delivery == null)
-            throw new IllegalStateException("Payment/Delivery strategy not set");
         double total = calculateTotalPrice();
         boolean paid = payment.pay(total);
         return paid && delivery.deliver(items);
